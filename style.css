@@ -1,325 +1,710 @@
-/* RESET E VARIÁVEIS */
+```css
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-:root {
-  --bg-color: #0b0e14;
-  --card-bg: #161b26;
-  --accent-green: #00ff87;
-  --accent-cyan: #60efff;
-  --text-main: #f0f4f8;
-  --text-muted: #94a3b8;
-  --font-heading: 'Teko', sans-serif;
-  --font-body: 'Work Sans', sans-serif;
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--bg-color);
-  color: var(--text-main);
-  font-family: var(--font-body);
-  line-height: 1.6;
-  overflow-x: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f4;
+    color: #111;
+    line-height: 1.6;
 }
 
-/* NAVEGAÇÃO */
+
+/* =========================
+   MENU
+========================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(5, 12, 8, 0.94);
+    backdrop-filter: blur(12px);
+}
+
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.2rem 8%;
-  background: rgba(11, 14, 20, 0.9);
-  backdrop-filter: blur(10px);
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    width: 90%;
+    max-width: 1200px;
+    height: 75px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .logo {
-  font-family: var(--font-heading);
-  font-size: 2.2rem;
-  font-weight: 700;
-  letter-spacing: 1px;
+    color: white;
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: -1px;
 }
 
 .logo span {
-  color: var(--accent-green);
+    color: #22d66d;
+    margin-left: 4px;
 }
 
-.navbar nav ul {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
 }
 
-.navbar a {
-  color: var(--text-main);
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s;
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-.navbar a:hover {
-  color: var(--accent-green);
+nav ul li a:hover {
+    color: #22d66d;
 }
 
-/* HERO SECTION COM IMAGEM DE FUNDO DO MESSI */
-.hero-messi {
-  position: relative;
-  min-height: 90vh;
-  display: flex;
-  align-items: center;
-  padding: 0 8%;
-  /* Imagem temática de fundo */
-  background: url('[images.unsplash.com](https://images.unsplash.com/photo-1518091043644-c1d4457512c6?auto=format&fit=crop&w=1600&q=80)') center/cover no-repeat;
-  margin-top: 60px;
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 27px;
+    cursor: pointer;
 }
 
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, #0b0e14 15%, rgba(11, 14, 20, 0.75) 50%, rgba(11, 14, 20, 0.4) 100%);
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at 80% 40%,
+            rgba(34, 214, 109, 0.25),
+            transparent 30%
+        ),
+        linear-gradient(
+            120deg,
+            #050b07,
+            #102116,
+            #050b07
+        );
+
+    color: white;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "⚽";
+
+    position: absolute;
+
+    right: 8%;
+    top: 30%;
+
+    font-size: 220px;
+
+    opacity: 0.04;
 }
 
 .hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 650px;
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding-top: 70px;
 }
 
-.badge {
-  background: linear-gradient(90deg, var(--accent-green), var(--accent-cyan));
-  color: #000;
-  font-weight: 700;
-  font-size: 0.85rem;
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  text-transform: uppercase;
+.subtitle {
+    color: #22d66d;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
 }
 
-.hero-content h1 {
-  font-family: var(--font-heading);
-  font-size: 4.5rem;
-  line-height: 0.95;
-  margin: 1rem 0;
-  text-transform: uppercase;
+.hero h1 {
+    font-size: clamp(55px, 8vw, 110px);
+    line-height: 0.9;
+    letter-spacing: -6px;
+    max-width: 900px;
 }
 
-.hero-content p {
-  color: var(--text-muted);
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
+.hero h1 span {
+    color: #22d66d;
 }
 
-.btn-primary {
-  display: inline-block;
-  background: var(--accent-green);
-  color: #000;
-  padding: 0.9rem 2rem;
-  font-weight: 700;
-  text-decoration: none;
-  border-radius: 4px;
-  text-transform: uppercase;
-  transition: transform 0.3s, box-shadow 0.3s;
+.description {
+    max-width: 650px;
+    color: #aab5ad;
+    margin: 30px 0;
+    font-size: 17px;
 }
 
-.btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 255, 135, 0.3);
+.button {
+    display: inline-block;
+
+    padding: 15px 25px;
+
+    background: #22d66d;
+    color: #07110a;
+
+    text-decoration: none;
+
+    font-weight: 900;
+
+    border-radius: 7px;
+
+    transition: 0.3s;
 }
 
-/* SEÇÕES GENÉRICAS */
-.section-container {
-  padding: 6rem 8%;
+.button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(34, 214, 109, 0.25);
+}
+
+
+/* =========================
+   SEÇÕES
+========================= */
+
+.section {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 110px 0;
 }
 
 .section-title {
-  font-family: var(--font-heading);
-  font-size: 3rem;
-  text-transform: uppercase;
-  margin-bottom: 2.5rem;
-  letter-spacing: 1px;
-  border-left: 4px solid var(--accent-green);
-  padding-left: 1rem;
+    margin-bottom: 55px;
 }
 
-/* CARDS DOS MODOS DE JOGO */
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+.section-title p {
+    color: #16a653;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
 }
 
-.card {
-  background-color: var(--card-bg);
-  padding: 2.5rem;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  position: relative;
-  transition: transform 0.3s, border-color 0.3s;
+.section-title h2 {
+    font-size: clamp(40px, 5vw, 65px);
+    line-height: 1;
+    letter-spacing: -3px;
 }
 
-.card:hover {
-  transform: translateY(-8px);
-  border-color: var(--accent-green);
+
+/* =========================
+   HISTÓRIA
+========================= */
+
+.history {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+
+    align-items: center;
 }
 
-.card-tag {
-  color: var(--accent-cyan);
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
+.history-text p {
+    color: #606960;
+    margin-bottom: 20px;
 }
 
-.card h3 {
-  font-family: var(--font-heading);
-  font-size: 2rem;
-  margin-bottom: 0.8rem;
+.year-card {
+    min-height: 400px;
+
+    padding: 45px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            140deg,
+            #0d2816,
+            #102c1a
+        );
+
+    color: white;
+
+    position: relative;
+    overflow: hidden;
 }
 
-.card p {
-  color: var(--text-muted);
-  font-size: 0.95rem;
+.year-card span {
+    display: block;
+
+    color: #22d66d;
+
+    font-size: 100px;
+    font-weight: 900;
+
+    line-height: 1;
 }
 
-/* SEÇÃO DESTAQUE MESSI */
-.messi-section {
-  background: linear-gradient(135deg, #121824 0%, #1a0933 100%);
-  padding: 6rem 8%;
-  border-y: 1px solid rgba(255, 255, 255, 0.05);
+.year-card h3 {
+    font-size: 28px;
+    margin-top: 40px;
 }
 
-.messi-content {
-  max-width: 900px;
+.year-card p {
+    color: #a5b0a8;
+    margin-top: 10px;
 }
 
-.messi-content h2 {
-  font-family: var(--font-heading);
-  font-size: 3.5rem;
-  color: var(--accent-cyan);
-  margin-bottom: 1rem;
-  text-transform: uppercase;
+.football {
+    position: absolute;
+    right: 30px;
+    bottom: 20px;
+
+    font-size: 90px;
+
+    opacity: 0.15;
 }
 
-.messi-content p {
-  font-size: 1.1rem;
-  color: var(--text-muted);
-  margin-bottom: 3rem;
+
+/* =========================
+   LINHA DO TEMPO
+========================= */
+
+.dark {
+    width: 100%;
+    max-width: none;
+
+    padding-left: 5%;
+    padding-right: 5%;
+
+    background: #08100b;
+
+    color: white;
 }
 
-.stats-row {
-  display: flex;
-  gap: 3rem;
-  flex-wrap: wrap;
+.timeline {
+    width: 90%;
+    max-width: 1000px;
+
+    margin: auto;
+
+    position: relative;
 }
 
-.stat-box {
-  display: flex;
-  flex-direction: column;
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    left: 100px;
+    top: 0;
+    bottom: 0;
+
+    width: 2px;
+
+    background: #243329;
 }
 
-.stat-number {
-  font-family: var(--font-heading);
-  font-size: 4rem;
-  font-weight: 700;
-  color: var(--accent-green);
-  line-height: 1;
+.timeline-item {
+    display: grid;
+
+    grid-template-columns: 80px 1fr;
+
+    gap: 70px;
+
+    position: relative;
+
+    margin-bottom: 50px;
 }
 
-.stat-label {
-  color: var(--text-main);
-  font-size: 0.9rem;
-  font-weight: 600;
+.date {
+    color: #22d66d;
+
+    font-weight: 900;
+
+    font-size: 17px;
 }
 
-/* ABAS DE DICAS INTERATIVAS */
-.tabs-wrapper {
-  background-color: var(--card-bg);
-  padding: 2rem;
-  border-radius: 8px;
+.timeline-content {
+    padding-left: 40px;
 }
 
-.tab-buttons {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding-bottom: 1rem;
+.timeline-content::before {
+    content: "";
+
+    width: 12px;
+    height: 12px;
+
+    background: #22d66d;
+
+    border-radius: 50%;
+
+    position: absolute;
+
+    left: 95px;
+    top: 5px;
+
+    box-shadow: 0 0 0 7px #08100b;
 }
 
-.tab-btn {
-  background: none;
-  border: none;
-  color: var(--text-muted);
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  cursor: pointer;
-  padding: 0.3rem 1rem;
-  transition: color 0.3s;
+.timeline-content h3 {
+    font-size: 24px;
+
+    margin-bottom: 8px;
 }
 
-.tab-btn.active, .tab-btn:hover {
-  color: var(--accent-green);
-  border-bottom: 2px solid var(--accent-green);
+.timeline-content p {
+    color: #8b968e;
+
+    max-width: 600px;
 }
 
-.tab-content {
-  display: none;
+
+/* =========================
+   JOGOS
+========================= */
+
+.games {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
 }
 
-.tab-content.active {
-  display: block;
+.game-card {
+    background: white;
+
+    padding: 30px;
+
+    min-height: 300px;
+
+    border: 1px solid #e0e5e1;
+
+    border-radius: 15px;
+
+    transition: 0.3s;
+
+    position: relative;
 }
 
-.tab-content h3 {
-  font-family: var(--font-heading);
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  color: var(--accent-cyan);
+.game-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #22d66d;
+
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
-.tab-content ul {
-  list-style: none;
+.number {
+    color: #22d66d;
+
+    font-weight: 900;
 }
 
-.tab-content li {
-  margin-bottom: 0.8rem;
-  padding-left: 1.5rem;
-  position: relative;
-  color: var(--text-muted);
+.game-card strong {
+    position: absolute;
+
+    top: 25px;
+    right: 25px;
+
+    font-size: 35px;
+
+    color: #e5e9e5;
 }
 
-.tab-content li::before {
-  content: "▹";
-  position: absolute;
-  left: 0;
-  color: var(--accent-green);
+.game-card h3 {
+    margin-top: 60px;
+
+    font-size: 23px;
 }
 
-/* RODAPÉ */
+.game-card p {
+    color: #69726c;
+
+    margin-top: 10px;
+}
+
+
+/* =========================
+   CURIOSIDADES
+========================= */
+
+.curiosities {
+    background: white;
+
+    max-width: none;
+
+    width: 100%;
+
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.curiosity-grid {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.curiosity {
+    padding: 30px;
+
+    border: 1px solid #e0e5e1;
+
+    border-radius: 15px;
+}
+
+.curiosity div {
+    font-size: 35px;
+}
+
+.curiosity h3 {
+    margin: 20px 0 10px;
+}
+
+.curiosity p {
+    color: #69726c;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   FRASE
+========================= */
+
+.quote {
+    background: #0b140e;
+
+    color: white;
+
+    padding: 130px 20px;
+
+    text-align: center;
+}
+
+.quote span {
+    color: #22d66d;
+
+    font-size: 80px;
+}
+
+.quote h2 {
+    max-width: 900px;
+
+    margin: 10px auto 20px;
+
+    font-size: clamp(35px, 5vw, 65px);
+
+    line-height: 1;
+
+    letter-spacing: -3px;
+}
+
+.quote p {
+    color: #22d66d;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
 footer {
-  text-align: center;
-  padding: 3rem 8%;
-  background-color: #07090d;
-  color: var(--text-muted);
-  font-size: 0.85rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: #050906;
+
+    color: white;
+
+    padding: 40px 5% 20px;
 }
 
-/* RESPONSIVIDADE */
-@media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 3rem;
-  }
-  .navbar nav {
-    display: none; /* Simplificação para dispositivos móveis */
-  }
-  .stats-row {
-    gap: 1.5rem;
-  }
+.footer-content {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
 }
+
+.footer-content p {
+    color: #717b74;
+
+    font-size: 13px;
+}
+
+.copyright {
+    max-width: 1200px;
+
+    margin: 30px auto 0;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #202820;
+
+    color: #59625c;
+
+    font-size: 11px;
+
+    text-align: center;
+}
+
+
+/* =========================
+   BOTÃO TOPO
+========================= */
+
+#topButton {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 45px;
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #22d66d;
+
+    color: #061009;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    display: none;
+
+    z-index: 999;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 850px) {
+
+    .menu-btn {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+
+        position: absolute;
+
+        top: 75px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 25px;
+
+        background: #08100b;
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    .history {
+        grid-template-columns: 1fr;
+    }
+
+    .games {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .curiosity-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .timeline::before {
+        display: none;
+    }
+
+    .timeline-item {
+        grid-template-columns: 70px 1fr;
+
+        gap: 20px;
+    }
+
+    .timeline-content {
+        padding-left: 0;
+    }
+
+    .timeline-content::before {
+        display: none;
+    }
+
+}
+
+
+@media (max-width: 550px) {
+
+    .hero h1 {
+        font-size: 55px;
+        letter-spacing: -3px;
+    }
+
+    .section {
+        padding: 75px 0;
+    }
+
+    .games {
+        grid-template-columns: 1fr;
+    }
+
+    .curiosity-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+}
+```
