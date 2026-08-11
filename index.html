@@ -1,129 +1,482 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FIFA & EA FC Central | Mundo dos Games de Futebol</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="[fonts.googleapis.com](https://fonts.googleapis.com)">
-  <link rel="preconnect" href="[fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
-  <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Teko:wght@500;700&family=Work+Sans:wght@300;400;600;700&display=swap)" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FIFA Legacy - História do Futebol nos Games</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- NAVEGAÇÃO -->
-  <header class="navbar">
-    <div class="logo">EA FC<span>ZONE</span></div>
-    <nav>
-      <ul>
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#modos">Modos de Jogo</a></li>
-        <li><a href="#messi">Legado Messi</a></li>
-        <li><a href="#dicas">Dicas & Táticas</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- MENU -->
+    <header>
+        <nav class="navbar">
 
-  <!-- HERO SECTION COM FUNDO DO MESSI -->
-  <section id="inicio" class="hero-messi">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <span class="badge">O Maior Simulador do Mundo</span>
-      <h1>A EVOLUÇÃO DO FUTEBOL VIRTUAL</h1>
-      <p>Explore a história, os modos icônicos e as táticas que dominam os gramados digitais do FIFA e do EA Sports FC.</p>
-      <a href="#modos" class="btn-primary">Ver Modos de Jogo</a>
-    </div>
-  </section>
+            <div class="logo">
+                FIFA<span>LEGACY</span>
+            </div>
 
-  <!-- MODOS DE JOGO -->
-  <section id="modos" class="section-container">
-    <h2 class="section-title">Modos de Jogo Principais</h2>
-    <div class="cards-grid">
-      <div class="card">
-        <div class="card-tag">Online</div>
-        <h3>Ultimate Team (UT)</h3>
-        <p>Monte o time dos seus sonhos combinando craques atuais com ídolos do passado. Gerencie química, conclua DMEs e dispute a Weekend League.</p>
-      </div>
-      <div class="card">
-        <div class="card-tag">Carreira</div>
-        <h3>Modo Carreira</h3>
-        <p>Assuma o papel de um técnico gerenciando transferências e finanças ou crie seu próprio jogador e trilhe o caminho até a Bola de Ouro.</p>
-      </div>
-      <div class="card">
-        <div class="card-tag">Multiplayer</div>
-        <h3>Clubs & VOLTA</h3>
-        <p>Junte-se a amigos controlando um único atleta no campo ou divirta-se no futebol de rua no formato VOLTA com ritmos acelerados e dribles curtos.</p>
-      </div>
-    </div>
-  </section>
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-  <!-- SEÇÃO DESTAQUE MESSI -->
-  <section id="messi" class="messi-section">
-    <div class="messi-content">
-      <h2>O Legado de Lionel Messi no FIFA</h2>
-      <p>Capa global de múltiplas edições da franquia (FIFA 13 ao FIFA 16), Lionel Messi sempre manteve os ratings mais altos da história do jogo, frequentemente alcançando o topo com cartas base de rating 94 e versões especiais de 99.</p>
-      <div class="stats-row">
-        <div class="stat-box">
-          <span class="stat-number">4x</span>
-          <span class="stat-label">Capa Consecutiva</span>
+            <ul id="menu">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#historia">História</a></li>
+                <li><a href="#linha-do-tempo">Linha do tempo</a></li>
+                <li><a href="#jogos">Jogos marcantes</a></li>
+                <li><a href="#curiosidades">Curiosidades</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- INÍCIO -->
+    <section id="inicio" class="hero">
+
+        <div class="hero-content">
+
+            <p class="subtitle">UMA HISTÓRIA DE MAIS DE 30 ANOS</p>
+
+            <h1>
+                A EVOLUÇÃO DO
+                <span>FIFA</span>
+            </h1>
+
+            <p class="description">
+                Uma viagem pela história de uma das maiores franquias
+                de futebol dos videogames, desde FIFA International Soccer
+                até a nova era EA SPORTS FC.
+            </p>
+
+            <a href="#historia" class="button">
+                EXPLORAR HISTÓRIA →
+            </a>
+
         </div>
-        <div class="stat-box">
-          <span class="stat-number">99</span>
-          <span class="stat-label">Rating Máximo (TOTS/TOTY)</span>
+
+    </section>
+
+
+    <!-- HISTÓRIA -->
+    <section id="historia" class="section">
+
+        <div class="section-title">
+            <p>01 — A ORIGEM</p>
+            <h2>Onde tudo começou</h2>
         </div>
-        <div class="stat-box">
-          <span class="stat-number">15+</span>
-          <span class="stat-label">Anos entre os Melhores</span>
+
+        <div class="history">
+
+            <div class="history-text">
+
+                <p>
+                    A história começou em 1993 com o lançamento de
+                    <strong>FIFA International Soccer</strong>.
+                    O jogo trouxe uma nova proposta para os fãs de futebol,
+                    permitindo que partidas virtuais fossem disputadas
+                    dentro de casa.
+                </p>
+
+                <p>
+                    Com o passar dos anos, a franquia acompanhou a evolução
+                    dos videogames, recebendo gráficos melhores, novas
+                    tecnologias, diferentes modos de jogo e uma quantidade
+                    cada vez maior de equipes e competições.
+                </p>
+
+                <p>
+                    O FIFA deixou de ser apenas um jogo de futebol e passou
+                    a fazer parte da infância e adolescência de milhões de
+                    jogadores ao redor do mundo.
+                </p>
+
+            </div>
+
+            <div class="year-card">
+
+                <span>1993</span>
+
+                <h3>FIFA International Soccer</h3>
+
+                <p>
+                    O primeiro capítulo de uma das maiores franquias
+                    esportivas dos videogames.
+                </p>
+
+                <div class="football">⚽</div>
+
+            </div>
+
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- DICAS INTERATIVAS -->
-  <section id="dicas" class="section-container">
-    <h2 class="section-title">Dicas para Dominar o Gramado</h2>
-    
-    <div class="tabs-wrapper">
-      <div class="tab-buttons">
-        <button class="tab-btn active" onclick="openTab(event, 'ataque')">Ataque</button>
-        <button class="tab-btn" onclick="openTab(event, 'defesa')">Defesa</button>
-        <button class="tab-btn" onclick="openTab(event, 'tatica')">Táticas</button>
-      </div>
+    </section>
 
-      <div id="ataque" class="tab-content active">
-        <h3>Finalização e Dribles</h3>
-        <ul>
-          <li><strong>Timed Finishing:</strong> Ative a finalização calibrada nas configurações para chutes de fora da área mais precisos.</li>
-          <li><strong>Passe Rasteiro Forte:</strong> Use R1 + X (PlayStation) ou RB + A (Xbox) para quebrar linhas de marcação rápida.</li>
-          <li><strong>Chute Colocado:</strong> Pressione R1/RB ao chutar com jogadores de curva alta.</li>
-        </ul>
-      </div>
 
-      <div id="defesa" class="tab-content">
-        <h3>Marcação e Posicionamento</h3>
-        <ul>
-          <li><strong>Cercar (Jockey):</strong> Segure L2/LT para manter o defensor de frente para o atacante sem dar botes precipitados.</li>
-          <li><strong>Troca no Analógico Direito:</strong> Alterne de defensor usando o analógico R3 para cobrir espaços antes da CPU.</li>
-          <li><strong>Não use os Zagueiros no Ataque:</strong> Defenda preferencialmente com os volantes para preservar a linha defensiva.</li>
-        </ul>
-      </div>
+    <!-- LINHA DO TEMPO -->
+    <section id="linha-do-tempo" class="section dark">
 
-      <div id="tatica" class="tab-content">
-        <h3>Instruções de Formação</h3>
-        <ul>
-          <li><strong>Formações Populares:</strong> 4-2-3-1 (equilibrada) e 4-3-2-1 (ofensiva e direta).</li>
-          <li><strong>Instruções de Volante:</strong> Configure "Ficar na Defesa ao Atacar" e "Cobrir o Centro".</li>
-          <li><strong>Laterais:</strong> Mantenha os laterais em "Ficar na Defesa" para conter pontas velozes.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+        <div class="section-title">
 
-  <!-- RODAPÉ -->
-  <footer>
-    <p>&copy; 2026 EA FC ZONE. Conteúdo informativo sobre jogos de futebol. Marca não afiliada diretamente à EA Sports.</p>
-  </footer>
+            <p>02 — EVOLUÇÃO</p>
 
-  <script src="script.js"></script>
+            <h2>Linha do tempo</h2>
+
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <div class="date">1993</div>
+
+                <div class="timeline-content">
+
+                    <h3>FIFA International Soccer</h3>
+
+                    <p>
+                        O primeiro jogo da franquia chega aos videogames
+                        e inicia uma longa história.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="date">1998</div>
+
+                <div class="timeline-content">
+
+                    <h3>FIFA 98</h3>
+
+                    <p>
+                        Um dos jogos mais lembrados da era clássica,
+                        principalmente pela Copa do Mundo de 1998.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="date">2005</div>
+
+                <div class="timeline-content">
+
+                    <h3>FIFA 06</h3>
+
+                    <p>
+                        A franquia entra em uma nova fase com evolução
+                        gráfica e melhorias na jogabilidade.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="date">2011</div>
+
+                <div class="timeline-content">
+
+                    <h3>FIFA 12</h3>
+
+                    <p>
+                        Novos sistemas de física e jogabilidade tornam
+                        as partidas ainda mais realistas.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="date">2017</div>
+
+                <div class="timeline-content">
+
+                    <h3>FIFA 18</h3>
+
+                    <p>
+                        A tecnologia gráfica ganha destaque e os modos
+                        online continuam crescendo.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="date">2022</div>
+
+                <div class="timeline-content">
+
+                    <h3>FIFA 23</h3>
+
+                    <p>
+                        O último jogo principal da franquia a utilizar
+                        oficialmente o nome FIFA.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="timeline-item">
+
+                <div class="date">2023+</div>
+
+                <div class="timeline-content">
+
+                    <h3>EA SPORTS FC</h3>
+
+                    <p>
+                        Uma nova fase do futebol virtual começa,
+                        mantendo a série viva com uma nova identidade.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- JOGOS -->
+    <section id="jogos" class="section">
+
+        <div class="section-title">
+
+            <p>03 — CLÁSSICOS</p>
+
+            <h2>Jogos marcantes</h2>
+
+        </div>
+
+
+        <div class="games">
+
+            <div class="game-card">
+
+                <span class="number">01</span>
+
+                <h3>FIFA International Soccer</h3>
+
+                <strong>1993</strong>
+
+                <p>
+                    O início de tudo. O jogo responsável por apresentar
+                    a franquia ao mundo.
+                </p>
+
+            </div>
+
+
+            <div class="game-card">
+
+                <span class="number">02</span>
+
+                <h3>FIFA 98</h3>
+
+                <strong>1998</strong>
+
+                <p>
+                    Um clássico lembrado por muitos jogadores da geração
+                    dos consoles de 32 bits.
+                </p>
+
+            </div>
+
+
+            <div class="game-card">
+
+                <span class="number">03</span>
+
+                <h3>FIFA 06</h3>
+
+                <strong>2005</strong>
+
+                <p>
+                    Um dos títulos mais populares da era PlayStation 2
+                    e Xbox.
+                </p>
+
+            </div>
+
+
+            <div class="game-card">
+
+                <span class="number">04</span>
+
+                <h3>FIFA 12</h3>
+
+                <strong>2011</strong>
+
+                <p>
+                    Marcado por mudanças importantes na física e
+                    na jogabilidade.
+                </p>
+
+            </div>
+
+
+            <div class="game-card">
+
+                <span class="number">05</span>
+
+                <h3>FIFA 18</h3>
+
+                <strong>2017</strong>
+
+                <p>
+                    Um dos grandes títulos da geração PlayStation 4
+                    e Xbox One.
+                </p>
+
+            </div>
+
+
+            <div class="game-card">
+
+                <span class="number">06</span>
+
+                <h3>FIFA 23</h3>
+
+                <strong>2022</strong>
+
+                <p>
+                    O último capítulo da série principal com o nome FIFA.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CURIOSIDADES -->
+    <section id="curiosidades" class="section curiosities">
+
+        <div class="section-title">
+
+            <p>04 — ALÉM DO JOGO</p>
+
+            <h2>Curiosidades</h2>
+
+        </div>
+
+
+        <div class="curiosity-grid">
+
+            <div class="curiosity">
+                <div>🎮</div>
+                <h3>Várias gerações</h3>
+                <p>
+                    A franquia acompanhou diferentes gerações de consoles,
+                    dos 16 bits até os consoles atuais.
+                </p>
+            </div>
+
+
+            <div class="curiosity">
+                <div>🌎</div>
+                <h3>Comunidade mundial</h3>
+                <p>
+                    O jogo conquistou jogadores de diferentes países
+                    e ajudou a popularizar o futebol virtual.
+                </p>
+            </div>
+
+
+            <div class="curiosity">
+                <div>🏆</div>
+                <h3>Ultimate Team</h3>
+                <p>
+                    O modo Ultimate Team se tornou uma das experiências
+                    mais populares da franquia.
+                </p>
+            </div>
+
+
+            <div class="curiosity">
+                <div>👩‍⚽</div>
+                <h3>Futebol feminino</h3>
+                <p>
+                    O futebol feminino passou a ganhar cada vez mais
+                    espaço dentro dos jogos.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FRASE FINAL -->
+    <section class="quote">
+
+        <div>
+
+            <span>“</span>
+
+            <h2>
+                Mais do que um jogo,
+                <br>
+                uma história que atravessou gerações.
+            </h2>
+
+            <p>FIFA LEGACY</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- RODAPÉ -->
+    <footer>
+
+        <div class="footer-content">
+
+            <div class="logo">
+                FIFA<span>LEGACY</span>
+            </div>
+
+            <p>
+                Uma homenagem à história dos games de futebol.
+            </p>
+
+        </div>
+
+        <div class="copyright">
+            Projeto educacional • FIFA e EA SPORTS são marcas de seus respectivos proprietários.
+        </div>
+
+    </footer>
+
+
+    <button id="topButton" onclick="goTop()">↑</button>
+
+
+    <script src="script.js"></script>
+
 </body>
 </html>
+```
