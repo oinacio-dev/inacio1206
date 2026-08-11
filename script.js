@@ -1,32 +1,110 @@
-// Função para alternar entre as abas da seção de Dicas
-function openTab(event, tabName) {
-  // Oculta todos os conteúdos das abas
-  const tabContents = document.getElementsByClassName("tab-content");
-  for (let i = 0; i < tabContents.length; i++) {
-    tabContents[i].classList.remove("active");
-  }
+```javascript
+// ================================
+// MENU MOBILE
+// ================================
 
-  // Remove a classe 'active' de todos os botões
-  const tabButtons = document.getElementsByClassName("tab-btn");
-  for (let i = 0; i < tabButtons.length; i++) {
-    tabButtons[i].classList.remove("active");
-  }
+function toggleMenu() {
 
-  // Exibe a aba atual e adiciona a classe 'active' ao botão clicado
-  document.getElementById(tabName).classList.add("active");
-  event.currentTarget.classList.add("active");
+    const menu = document.getElementById("menu");
+
+    menu.classList.toggle("active");
+
 }
 
-// Efeito de transição suave ao clicar nos links de navegação
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  });
+
+// ================================
+// FECHAR MENU AO CLICAR
+// ================================
+
+const links = document.querySelectorAll("#menu a");
+
+links.forEach(function(link) {
+
+    link.addEventListener("click", function() {
+
+        document.getElementById("menu").classList.remove("active");
+
+    });
+
 });
+
+
+// ================================
+// BOTÃO VOLTAR AO TOPO
+// ================================
+
+const topButton = document.getElementById("topButton");
+
+window.addEventListener("scroll", function() {
+
+    if (window.scrollY > 400) {
+
+        topButton.style.display = "block";
+
+    } else {
+
+        topButton.style.display = "none";
+
+    }
+
+});
+
+
+function goTop() {
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+}
+
+
+// ================================
+// ANIMAÇÃO DOS ELEMENTOS
+// ================================
+
+const elements = document.querySelectorAll(
+    ".game-card, .curiosity, .timeline-item, .year-card"
+);
+
+const observer = new IntersectionObserver(
+
+    function(entries) {
+
+        entries.forEach(function(entry) {
+
+            if (entry.isIntersecting) {
+
+                entry.target.style.opacity = "1";
+
+                entry.target.style.transform = "translateY(0)";
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold: 0.15
+    }
+
+);
+
+
+elements.forEach(function(element) {
+
+    element.style.opacity = "0";
+
+    element.style.transform = "translateY(30px)";
+
+    element.style.transition = "all 0.7s ease";
+
+    observer.observe(element);
+
+});
+```
