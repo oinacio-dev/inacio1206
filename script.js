@@ -31,21 +31,19 @@ tabButtons.forEach(button => {
         // Adiciona classe ativa no botão clicado
         button.classList.add('active');
         
-        // Captura a chave do motor selecionado através do atributo customizado 'data-engine'
+        // Captura a chave do motor selecionado através do atributo 'data-engine'
         const selectedEngine = button.getAttribute('data-engine');
         
-        // Atualiza a caixa de exibição com uma animação simples de troca de texto
+        // Inicia o efeito fade-out ocultando o texto anterior
         displayBox.style.opacity = 0;
         
+        // Espera o fade-out completar (200ms) para trocar o conteúdo e aplicar o fade-in
         setTimeout(() => {
             displayBox.innerHTML = `
                 <h3>${engineData[selectedEngine].title}</h3>
                 <p>${engineData[selectedEngine].description}</p>
             `;
             displayBox.style.opacity = 1;
-        }, 150);
+        }, 200);
     });
 });
-
-// Adiciona transição suave via CSS para a troca de opacidade do conteúdo das abas
-displayBox.style.transition = 'opacity 0.2s ease-in-out';
