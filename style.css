@@ -213,26 +213,44 @@ h1, h2, h3, .logo {
     margin-bottom: 15px;
 }
 
-/* Estrutura Responsiva de Vídeo */
-.video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%; /* Mantém a proporção 16:9 */
-    height: 0;
+/* Estilo para o Card de Vídeo Seguro (Evita conexão recusada) */
+.video-fallback-card {
+    background: linear-gradient(135deg, #0b111e 0%, #152642 100%);
+    border: 2px solid #00df89;
+    padding: 60px 40px;
+    border-radius: 12px;
     max-width: 850px;
     margin: 0 auto;
-    border: 3px solid #0b111e;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-.video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
+.play-icon-hub {
+    font-size: 3.5rem;
+    color: #ef4444;
+    margin-bottom: 20px;
+    animation: pulsePlay 2s infinite;
+}
+
+.video-fallback-card h3 {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.video-fallback-card p {
+    color: #9ca3af;
+    margin-bottom: 30px;
+    font-size: 1rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@keyframes pulsePlay {
+    0% { transform: scale(1); opacity: 0.9; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.9; }
 }
 
 /* Linha do Tempo */
@@ -425,7 +443,7 @@ h1, h2, h3, .logo {
     gap: 20px;
 }
 
-/* Transição de opacidade gerenciada de forma limpa pelo CSS */
+/* Transição de opacidade dinâmica do JS */
 #engine-content {
     opacity: 1;
     transition: opacity 0.2s ease-in-out;
