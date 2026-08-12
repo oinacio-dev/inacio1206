@@ -1,710 +1,408 @@
-```css
+/* Configurações Gerais e Resets */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
+body {
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f8f9fa;
     scroll-behavior: smooth;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f4f6f4;
-    color: #111;
-    line-height: 1.6;
-}
-
-
-/* =========================
-   MENU
-========================= */
-
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background: rgba(5, 12, 8, 0.94);
-    backdrop-filter: blur(12px);
-}
-
-.navbar {
+.container {
     width: 90%;
     max-width: 1200px;
-    height: 75px;
-    margin: auto;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    margin: 0 auto;
 }
 
-.logo {
-    color: white;
-    font-size: 22px;
-    font-weight: 900;
-    letter-spacing: -1px;
+.section-padding {
+    padding: 80px 0;
 }
 
-.logo span {
-    color: #22d66d;
-    margin-left: 4px;
+.text-center {
+    text-align: center;
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 30px;
+/* Cores de Fundo */
+.bgcolor-dark {
+    background-color: #0b111e;
+    color: #f8f9fa;
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
-    transition: 0.3s;
+.bgcolor-light {
+    background-color: #ffffff;
+    color: #111827;
 }
 
-nav ul li a:hover {
-    color: #22d66d;
+/* Títulos */
+h1, h2, h3, .logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0.5px;
 }
 
-.menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 27px;
-    cursor: pointer;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-    min-height: 100vh;
-
-    display: flex;
-    align-items: center;
-
-    position: relative;
-
-    background:
-        radial-gradient(
-            circle at 80% 40%,
-            rgba(34, 214, 109, 0.25),
-            transparent 30%
-        ),
-        linear-gradient(
-            120deg,
-            #050b07,
-            #102116,
-            #050b07
-        );
-
-    color: white;
-    overflow: hidden;
-}
-
-.hero::after {
-    content: "⚽";
-
-    position: absolute;
-
-    right: 8%;
-    top: 30%;
-
-    font-size: 220px;
-
-    opacity: 0.04;
-}
-
-.hero-content {
-    width: 90%;
-    max-width: 1200px;
-
-    margin: auto;
-
-    padding-top: 70px;
-}
-
-.subtitle {
-    color: #22d66d;
-    font-size: 13px;
-    font-weight: bold;
-    letter-spacing: 3px;
-    margin-bottom: 20px;
-}
-
-.hero h1 {
-    font-size: clamp(55px, 8vw, 110px);
-    line-height: 0.9;
-    letter-spacing: -6px;
-    max-width: 900px;
-}
-
-.hero h1 span {
-    color: #22d66d;
-}
-
-.description {
-    max-width: 650px;
-    color: #aab5ad;
-    margin: 30px 0;
-    font-size: 17px;
-}
-
-.button {
-    display: inline-block;
-
-    padding: 15px 25px;
-
-    background: #22d66d;
-    color: #07110a;
-
-    text-decoration: none;
-
-    font-weight: 900;
-
-    border-radius: 7px;
-
-    transition: 0.3s;
-}
-
-.button:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(34, 214, 109, 0.25);
-}
-
-
-/* =========================
-   SEÇÕES
-========================= */
-
-.section {
-    width: 90%;
-    max-width: 1200px;
-
-    margin: auto;
-
-    padding: 110px 0;
-}
-
-.section-title {
-    margin-bottom: 55px;
-}
-
-.section-title p {
-    color: #16a653;
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 3px;
-    margin-bottom: 10px;
-}
-
-.section-title h2 {
-    font-size: clamp(40px, 5vw, 65px);
-    line-height: 1;
-    letter-spacing: -3px;
-}
-
-
-/* =========================
-   HISTÓRIA
-========================= */
-
-.history {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-
-    align-items: center;
-}
-
-.history-text p {
-    color: #606960;
-    margin-bottom: 20px;
-}
-
-.year-card {
-    min-height: 400px;
-
-    padding: 45px;
-
-    border-radius: 20px;
-
-    background:
-        linear-gradient(
-            140deg,
-            #0d2816,
-            #102c1a
-        );
-
-    color: white;
-
-    position: relative;
-    overflow: hidden;
-}
-
-.year-card span {
-    display: block;
-
-    color: #22d66d;
-
-    font-size: 100px;
-    font-weight: 900;
-
-    line-height: 1;
-}
-
-.year-card h3 {
-    font-size: 28px;
-    margin-top: 40px;
-}
-
-.year-card p {
-    color: #a5b0a8;
-    margin-top: 10px;
-}
-
-.football {
-    position: absolute;
-    right: 30px;
-    bottom: 20px;
-
-    font-size: 90px;
-
-    opacity: 0.15;
-}
-
-
-/* =========================
-   LINHA DO TEMPO
-========================= */
-
-.dark {
-    width: 100%;
-    max-width: none;
-
-    padding-left: 5%;
-    padding-right: 5%;
-
-    background: #08100b;
-
-    color: white;
-}
-
-.timeline {
-    width: 90%;
-    max-width: 1000px;
-
-    margin: auto;
-
-    position: relative;
-}
-
-.timeline::before {
-    content: "";
-
-    position: absolute;
-
-    left: 100px;
-    top: 0;
-    bottom: 0;
-
-    width: 2px;
-
-    background: #243329;
-}
-
-.timeline-item {
-    display: grid;
-
-    grid-template-columns: 80px 1fr;
-
-    gap: 70px;
-
-    position: relative;
-
+.center-title {
+    text-align: center;
     margin-bottom: 50px;
 }
 
-.date {
-    color: #22d66d;
-
-    font-weight: 900;
-
-    font-size: 17px;
+.center-title h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
 }
 
-.timeline-content {
-    padding-left: 40px;
+.center-title p {
+    color: #6b7280;
+    font-size: 1.1rem;
 }
 
-.timeline-content::before {
-    content: "";
-
-    width: 12px;
-    height: 12px;
-
-    background: #22d66d;
-
-    border-radius: 50%;
-
-    position: absolute;
-
-    left: 95px;
-    top: 5px;
-
-    box-shadow: 0 0 0 7px #08100b;
+.text-white .center-title p {
+    color: #9ca3af;
 }
 
-.timeline-content h3 {
-    font-size: 24px;
-
-    margin-bottom: 8px;
+/* Cabeçalho */
+.main-header {
+    background-color: #0b111e;
+    border-bottom: 2px solid #00df89;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-.timeline-content p {
-    color: #8b968e;
-
-    max-width: 600px;
-}
-
-
-/* =========================
-   JOGOS
-========================= */
-
-.games {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 20px;
-}
-
-.game-card {
-    background: white;
-
-    padding: 30px;
-
-    min-height: 300px;
-
-    border: 1px solid #e0e5e1;
-
-    border-radius: 15px;
-
-    transition: 0.3s;
-
-    position: relative;
-}
-
-.game-card:hover {
-    transform: translateY(-8px);
-
-    border-color: #22d66d;
-
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-}
-
-.number {
-    color: #22d66d;
-
-    font-weight: 900;
-}
-
-.game-card strong {
-    position: absolute;
-
-    top: 25px;
-    right: 25px;
-
-    font-size: 35px;
-
-    color: #e5e9e5;
-}
-
-.game-card h3 {
-    margin-top: 60px;
-
-    font-size: 23px;
-}
-
-.game-card p {
-    color: #69726c;
-
-    margin-top: 10px;
-}
-
-
-/* =========================
-   CURIOSIDADES
-========================= */
-
-.curiosities {
-    background: white;
-
-    max-width: none;
-
-    width: 100%;
-
-    padding-left: 5%;
-    padding-right: 5%;
-}
-
-.curiosity-grid {
-    width: 90%;
-    max-width: 1200px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns: repeat(4, 1fr);
-
-    gap: 20px;
-}
-
-.curiosity {
-    padding: 30px;
-
-    border: 1px solid #e0e5e1;
-
-    border-radius: 15px;
-}
-
-.curiosity div {
-    font-size: 35px;
-}
-
-.curiosity h3 {
-    margin: 20px 0 10px;
-}
-
-.curiosity p {
-    color: #69726c;
-
-    font-size: 14px;
-}
-
-
-/* =========================
-   FRASE
-========================= */
-
-.quote {
-    background: #0b140e;
-
-    color: white;
-
-    padding: 130px 20px;
-
-    text-align: center;
-}
-
-.quote span {
-    color: #22d66d;
-
-    font-size: 80px;
-}
-
-.quote h2 {
-    max-width: 900px;
-
-    margin: 10px auto 20px;
-
-    font-size: clamp(35px, 5vw, 65px);
-
-    line-height: 1;
-
-    letter-spacing: -3px;
-}
-
-.quote p {
-    color: #22d66d;
-
-    font-weight: bold;
-
-    letter-spacing: 3px;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    background: #050906;
-
-    color: white;
-
-    padding: 40px 5% 20px;
-}
-
-.footer-content {
-    max-width: 1200px;
-
-    margin: auto;
-
+.header-container {
     display: flex;
-
     justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
 
+.logo {
+    font-size: 1.8rem;
+    color: #ffffff;
+}
+
+.logo span {
+    color: #00df89;
+}
+
+.nav-links a {
+    color: #9ca3af;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #00df89;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    background-color: #0d1b2a;
+    background-image: radial-gradient(circle at 20% 30%, #142847 0%, #070d18 80%);
+    height: 75vh;
+    display: flex;
     align-items: center;
 }
 
-.footer-content p {
-    color: #717b74;
-
-    font-size: 13px;
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
 }
 
-.copyright {
-    max-width: 1200px;
-
-    margin: 30px auto 0;
-
-    padding-top: 20px;
-
-    border-top: 1px solid #202820;
-
-    color: #59625c;
-
-    font-size: 11px;
-
-    text-align: center;
+.hero-content h1 {
+    font-size: 4rem;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
 }
 
+.hero-content p {
+    font-size: 1.25rem;
+    color: #cbd5e1;
+    margin-bottom: 30px;
+}
 
-/* =========================
-   BOTÃO TOPO
-========================= */
+.btn-primary {
+    display: inline-block;
+    background-color: #00df89;
+    color: #0b111e;
+    text-decoration: none;
+    padding: 12px 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: transform 0.2s, background-color 0.2s;
+}
 
-#topButton {
-    position: fixed;
+.btn-primary:hover {
+    transform: translateY(-2px);
+    background-color: #02b36e;
+}
 
-    right: 25px;
-    bottom: 25px;
+/* Seção Origem Flex */
+.flex-grid {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
 
-    width: 45px;
-    height: 45px;
+.text-block {
+    flex: 1;
+}
 
-    border: none;
-
-    border-radius: 50%;
-
-    background: #22d66d;
-
-    color: #061009;
-
-    font-size: 20px;
-
+.subtitle {
+    color: #00df89;
     font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 10px;
+}
 
+.text-block h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.text-block p {
+    margin-bottom: 15px;
+    color: #9ca3af;
+}
+
+.visual-card-placeholder {
+    flex: 1;
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border: 1px solid #334155;
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.pixel-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #00df89;
+    color: #0b111e;
+    padding: 5px 15px;
+    font-weight: 800;
+    font-size: 0.85rem;
+    border-radius: 20px;
+}
+
+.visual-card-placeholder h3 {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+/* Linha do Tempo */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 30px;
+    border-left: 3px solid #e5e7eb;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.timeline-year {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #00df89;
+    position: absolute;
+    left: -115px;
+    width: 70px;
+    text-align: right;
+    top: -2px;
+}
+
+.timeline-content {
+    background-color: #f3f4f6;
+    padding: 20px;
+    border-radius: 6px;
+    border-left: 4px solid #0b111e;
+}
+
+.timeline-content h3 {
+    margin-bottom: 8px;
+    color: #111827;
+}
+
+/* Cards Modos de Jogo */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.mode-card {
+    background-color: #111827;
+    border: 1px solid #1f2937;
+    padding: 30px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.mode-card:hover {
+    transform: translateY(-5px);
+    border-color: #00df89;
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.mode-card h3 {
+    color: #ffffff;
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+.mode-card p {
+    color: #9ca3af;
+    font-size: 0.95rem;
+}
+
+/* Abas de Motores Gráficos */
+.engine-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background-color: #e5e7eb;
+    border: none;
+    padding: 10px 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
     cursor: pointer;
-
-    display: none;
-
-    z-index: 999;
+    border-radius: 4px;
+    transition: all 0.2s;
 }
 
-
-/* =========================
-   RESPONSIVIDADE
-========================= */
-
-@media (max-width: 850px) {
-
-    .menu-btn {
-        display: block;
-    }
-
-    nav ul {
-        display: none;
-
-        position: absolute;
-
-        top: 75px;
-        left: 0;
-
-        width: 100%;
-
-        padding: 25px;
-
-        background: #08100b;
-
-        flex-direction: column;
-
-        gap: 20px;
-    }
-
-    nav ul.active {
-        display: flex;
-    }
-
-    .history {
-        grid-template-columns: 1fr;
-    }
-
-    .games {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .curiosity-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .timeline::before {
-        display: none;
-    }
-
-    .timeline-item {
-        grid-template-columns: 70px 1fr;
-
-        gap: 20px;
-    }
-
-    .timeline-content {
-        padding-left: 0;
-    }
-
-    .timeline-content::before {
-        display: none;
-    }
-
+.tab-btn.active, .tab-btn:hover {
+    background-color: #0b111e;
+    color: #ffffff;
 }
 
+.engine-display-box {
+    background-color: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    padding: 40px;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    min-height: 180px;
+}
 
-@media (max-width: 550px) {
+.engine-display-box h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #0b111e;
+}
 
-    .hero h1 {
-        font-size: 55px;
-        letter-spacing: -3px;
-    }
+/* Fim de uma Era */
+.narrow-content {
+    max-width: 750px;
+    margin: 0 auto;
+}
 
-    .section {
-        padding: 75px 0;
-    }
+.badge-accent {
+    background-color: #ef4444;
+    color: #ffffff;
+    padding: 5px 15px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
 
-    .games {
-        grid-template-columns: 1fr;
-    }
+.narrow-content h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
 
-    .curiosity-grid {
-        grid-template-columns: 1fr;
-    }
+.narrow-content p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #cbd5e1;
+}
 
-    .footer-content {
+/* Rodapé */
+.main-footer {
+    background-color: #070d18;
+    color: #6b7280;
+    padding: 40px 0;
+    font-size: 0.9rem;
+    border-top: 1px solid #111827;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Responsividade Mobile */
+@media (max-width: 768px) {
+    .header-container {
         flex-direction: column;
-        align-items: flex-start;
         gap: 15px;
     }
+    
+    .nav-links a {
+        margin: 0 10px;
+        font-size: 0.9rem;
+    }
 
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .flex-grid {
+        flex-direction: column;
+    }
+
+    .timeline {
+        padding-left: 15px;
+    }
+
+    .timeline-year {
+        position: relative;
+        left: 0;
+        text-align: left;
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
 }
-```
