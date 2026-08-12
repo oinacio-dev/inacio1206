@@ -27,6 +27,10 @@ body {
     text-align: center;
 }
 
+.border-top {
+    border-top: 1px solid #e5e7eb;
+}
+
 /* Cores de Fundo */
 .bgcolor-dark {
     background-color: #0b111e;
@@ -209,6 +213,28 @@ h1, h2, h3, .logo {
     margin-bottom: 15px;
 }
 
+/* Estrutura Responsiva de Vídeo */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* Mantém a proporção 16:9 */
+    height: 0;
+    max-width: 850px;
+    margin: 0 auto;
+    border: 3px solid #0b111e;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
 /* Linha do Tempo */
 .timeline {
     position: relative;
@@ -325,6 +351,36 @@ h1, h2, h3, .logo {
     color: #0b111e;
 }
 
+/* Seção de Opinião */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background-color: #111827;
+    border-left: 4px solid #00df89;
+    padding: 30px;
+    border-radius: 0 8px 8px 0;
+}
+
+.testimonial-card .quote {
+    font-style: italic;
+    color: #cbd5e1;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+.testimonial-card .author {
+    display: block;
+    color: #00df89;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
 /* Fim de uma Era */
 .narrow-content {
     max-width: 750px;
@@ -369,7 +425,7 @@ h1, h2, h3, .logo {
     gap: 20px;
 }
 
-/* Correção e efeito visual dinâmico do JS */
+/* Transição de opacidade gerenciada de forma limpa pelo CSS */
 #engine-content {
     opacity: 1;
     transition: opacity 0.2s ease-in-out;
